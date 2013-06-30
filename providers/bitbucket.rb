@@ -12,12 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+include BitbucketHelpers
+
 def whyrun_supported?
   true
 end
 
 use_inline_resources
-include BitbucketHelpers
 
 action :create do
   if ::File.exists?("#{new_resource.path}/#{new_resource.label}") \
