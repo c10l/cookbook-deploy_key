@@ -37,6 +37,6 @@ module BitbucketHelpers
       throw "Could not get list of keys from Bitbucket: #{response.code} #{response.body}"
     end
     keys = response.parsed_response
-    keys.find { |k| k["key"] == key }
+    keys.find { |k| k["key"].strip == key.strip }
   end
 end

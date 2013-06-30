@@ -36,6 +36,6 @@ module GithubHelpers
     unless keys.code == 200
       throw "Could not get list of keys from Github: #{keys.code}"
     end
-    keys.find { |k| k["key"] == key }
+    keys.find { |k| k["key"].strip == key.strip }
   end
 end
