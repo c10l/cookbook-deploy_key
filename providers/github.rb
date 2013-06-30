@@ -57,19 +57,21 @@ end
 action :add do
   new_resource.run_action(:create)
   
-  if get_key(new_resource.label)
+  pubkey = ::File.read("#{new_resource.path}/#{new_resource.label}.pub")
+  if get_key(pubkey)
     Chef::Log.info("Deploy key #{new_resource.label} already added - nothing to do.")
   else
     converge_by("Register #{new_resource}") do
-      add_key(new_resource.label, ::File.read("#{new_resource.path}/#{new_resource.label}.pub"))
+      add_key(new_resource.label, pubkey)
     end
   end
 end
 
 action :remove do
-  if get_key(new_resource.label)
+  pubkey = ::File.read("#{new_resource.path}/#{new_resource.label}.pub")
+  if get_key(pubkey)
     converge_by("De-register #{new_resource}") do
-      remove_key(new_resource.label)
+      remove_key(pubkey)
     end
   else
     Chef::Log.info("Deploy key #{new_resource} not present - nothing to do.")
