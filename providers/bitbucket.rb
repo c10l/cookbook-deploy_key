@@ -17,6 +17,7 @@ def whyrun_supported?
 end
 
 use_inline_resources
+include BitbucketHelpers
 
 action :create do
   if ::File.exists?("#{new_resource.path}/#{new_resource.label}") \
