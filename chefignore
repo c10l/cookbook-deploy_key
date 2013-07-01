@@ -96,3 +96,6 @@ Vagrantfile
 # Travis #
 ##########
 .travis.yml
+
+# Ignore recipes since this is a pure library cookbook
+recipes/*
