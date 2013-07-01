@@ -108,4 +108,4 @@ or OAuth token ( [Github](http://developer.github.com/v3/oauth/) | [Bitbucket](h
 
 # Author
 
-Cassiano Leal (<cassianoleal@gmail.com> | [twitter](http://twitter.com/cassianoleal) | [github](https://github.com/cassianoleal)) 
+Cassiano Leal ([email](<cassianoleal@gmail.com>) | [twitter](http://twitter.com/cassianoleal) | [github](https://github.com/cassianoleal)) 
