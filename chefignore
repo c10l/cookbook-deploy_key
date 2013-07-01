@@ -10,8 +10,6 @@ nohup.out
 ehthumbs.db
 Thumbs.db
 
-*.sublime-*
-
 # SASS #
 ########
 .sass-cache
@@ -32,6 +30,7 @@ tmtags
 .project
 .settings
 mkmf.log
+*.sublime-*
 
 ## COMPILED ##
 ##############
@@ -55,6 +54,8 @@ test/*
 features/*
 Guardfile
 Procfile
+.kitchen.yml
+.kitchen
 
 # SCM #
 #######
@@ -96,6 +97,11 @@ Vagrantfile
 # Travis #
 ##########
 .travis.yml
+
+# Bundler #
+###########
+Gemfile
+Gemfile.lock
 
 # Ignore recipes since this is a pure library cookbook
 recipes/*
