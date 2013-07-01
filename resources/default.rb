@@ -18,8 +18,8 @@ default_action :add
 attribute :label, :kind_of => String, :name_attribute => true
 attribute :path, :kind_of => String, :required => true
 
-# For GitHub    - { :token => token }
-# For BitBucket - { :user => user, :password => password }
+# For OAuth: { :token => token }
+# For user/pass: { :user => user, :password => password }
 attribute :credentials, :kind_of => Hash, :required => true
 
 # should be in the format: username/repo_slug (e.g.: cassianoleal/cookbook-deploy_key)

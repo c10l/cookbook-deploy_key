@@ -46,7 +46,7 @@ module DeployKey
         case self
         when Chef::Provider::DeployKeyBitbucket then :label
         when Chef::Provider::DeployKeyGithub    then :title
-        end => label,
+        end => "#{label} - #{node.name}",
         :key => key
       }.to_json
     })
