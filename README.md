@@ -22,45 +22,12 @@ Supported providers:
 
 # Attributes
 
-<table>
-  <tbody>
-    <tr>
-      <th>Attribute</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td><code>label</code></td>
-      <td>String</td>
-      <td>This will be used as both the name of the key pair files and the key label on the provider. Defaults to the <code>name</code> attribute</td>
-    </tr>
-    <tr>
-      <td><code>path</code></td>
-      <td>String</td>
-      <td>The directory where the private and public keys are stored</td>
-    </tr>
-    <tr>
-      <td><code>credentials</code></td>
-      <td>Hash</td>
-      <td>The credentials used to authenticate on the API - see <a href="#authentication">below</a></td>
-    </tr>
-    <tr>
-      <td><code>repo</code></td>
-      <td>String</td>
-      <td>The repository where the deploy key will be installed. Has to be in the format <code>username/repo_slug</code> (e.g.: <code>cassianoleal/cookbook-deploy_key</code>)</td>
-    </tr>
-    <tr>
-      <td><code>owner</code></td>
-      <td>String</td>
-      <td>The owner of the key files on disk</td>
-    </tr>
-    <tr>
-      <td><code>group</code></td>
-      <td>String</td>
-      <td>The group of the key files on disk</td>
-    </tr>
-  </tbody>
-</table>
+* `label`: Usedused as both the name of the key pair files on disk and the deploy key label on the provider. Defaults to `name`;
+* `path`: The directory where the private and public keys are stored
+* `credentials`: The credentials used to authenticate on the API - see [below](#authentication)
+* `repo`: The repository where the deploy key will be installed. Has to be in the format `username/repo_slug` (e.g.: `cassianoleal/cookbook-deploy_key`)
+* `owner`: The owner of the key files on disk
+* `group`: The group of the key files on disk
 
 # Actions
 
