@@ -22,7 +22,7 @@ Supported providers:
 
 # Attributes
 
-* `label`: Usedused as both the name of the key pair files on disk and the deploy key label on the provider. Defaults to `name`;
+* `label`: Used as both the name of the key pair files on disk and the deploy key label on the provider. Defaults to `name`;
 * `path`: The directory where the private and public keys are stored
 * `credentials`: The credentials used to authenticate on the API - see [below](#authentication)
 * `repo`: The repository where the deploy key will be installed. Has to be in the format `username/repo_slug` (e.g.: `cassianoleal/cookbook-deploy_key`)
