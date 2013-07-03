@@ -27,3 +27,5 @@ attribute :repo, :kind_of => String, :required => true, :regex => /\w+\/\w+/
 
 attribute :owner, :kind_of => String, :default => "root"
 attribute :group, :kind_of => String, :default => "root"
+
+attribute :mode, :default => 00600

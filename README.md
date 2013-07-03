@@ -26,8 +26,9 @@ Supported providers:
 * `path`: The directory where the private and public keys are stored
 * `credentials`: The credentials used to authenticate on the API - see [below](#authentication)
 * `repo`: The repository where the deploy key will be installed. Has to be in the format `username/repo_slug` (e.g.: `cassianoleal/cookbook-deploy_key`)
-* `owner`: The owner of the key files on disk
-* `group`: The group of the key files on disk
+* `owner`: The owner of the key files on disk. Defaults to `root`
+* `group`: The group of the key files on disk. Defaults to `root`
+* `mode`: The mode that will be passed on to chmod. Defaults to `0600`
 
 # Actions
 
@@ -70,9 +71,10 @@ or OAuth token ( [Github](http://developer.github.com/v3/oauth/) | [Bitbucket](h
       repo 'organization/million_dollar_app'
       owner 'deploy'
       group 'deploy'
-      action :nothing
+      mode 00640
+      action :add
     end
 
 # Author
 
-Cassiano Leal ([email](<cassianoleal@gmail.com>) | [twitter](http://twitter.com/cassianoleal) | [github](https://github.com/cassianoleal)) 
+Cassiano Leal ([email](mailto:cassianoleal@gmail.com) | [twitter](http://twitter.com/cassianoleal) | [github](https://github.com/cassianoleal)) 

@@ -36,11 +36,13 @@ action :create do
   file "#{new_resource.path}/#{new_resource.label}" do
     owner new_resource.owner
     group new_resource.group
+    mode new_resource.mode
   end
   
   file "#{new_resource.path}/#{new_resource.label}.pub" do
     owner new_resource.owner
     group new_resource.group
+    mode new_resource.mode
   end
 end
 
