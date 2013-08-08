@@ -10,10 +10,12 @@ Use this cookbook as a dependency of whatever cookbook will manage your deploy k
 
 Declare a `deploy_key` resource and configure the provider:
 
-    deploy_key "app_deploy_key" do
-      provider Chef::Provider::DeployKeyGithub
-      ...
-    end
+```ruby
+deploy_key "app_deploy_key" do
+  provider Chef::Provider::DeployKeyGithub
+  ...
+end
+```
 
 Supported providers:
 
@@ -41,39 +43,45 @@ Supported providers:
 
 Authentication can be done either via username/password:
 
-    deploy_key "app_deploy_key" do
-      provider Chef::Provider::DeployKeyGithub
-      credentials({
-        :user => 'username@org.com',
-        :password => 'very_secure_password'
-      })
-      ...
-    end
+```ruby
+deploy_key "app_deploy_key" do
+  provider Chef::Provider::DeployKeyGithub
+  credentials({
+    :user => 'username@org.com',
+    :password => 'very_secure_password'
+  })
+  ...
+end
+```
 
 or OAuth token ( [Github](http://developer.github.com/v3/oauth/) | [Bitbucket](https://confluence.atlassian.com/display/BITBUCKET/OAuth+on+Bitbucket) ):
 
-    deploy_key "app_deploy_key" do
-      provider Chef::Provider::DeployKeyGithub
-      credentials({
-        :token => 'awesome_and_much_more_secure_token'
-      })
-      ...
-    end
+```ruby
+deploy_key "app_deploy_key" do
+  provider Chef::Provider::DeployKeyGithub
+  credentials({
+    :token => 'awesome_and_much_more_secure_token'
+  })
+  ...
+end
+```
 
 # A full example
 
-    deploy_key "bitbucket_key" do
-      provider Chef::Provider::DeployKeyBitbucket
-      path '/home/app_user/.ssh'  
-      credentials({
-        :token => 'my_bitbucket_oauth_token'
-      })
-      repo 'organization/million_dollar_app'
-      owner 'deploy'
-      group 'deploy'
-      mode 00640
-      action :add
-    end
+```ruby
+deploy_key "bitbucket_key" do
+  provider Chef::Provider::DeployKeyBitbucket
+  path '/home/app_user/.ssh'  
+  credentials({
+    :token => 'my_bitbucket_oauth_token'
+  })
+  repo 'organization/million_dollar_app'
+  owner 'deploy'
+  group 'deploy'
+  mode 00640
+  action :add
+end
+```
 
 # Author
 
