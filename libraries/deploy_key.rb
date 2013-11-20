@@ -17,7 +17,7 @@ begin
 rescue Gem::LoadError
   ::Chef::Log.info("Installing 'httparty' gem...")
   require 'rubygems/dependency_installer'
-  Gem::DependencyInstaller.new(Gem::DependencyInstaller::DEFAULT_OPTIONS).install('httparty')
+  Gem::DependencyInstaller.new(Gem::DependencyInstaller::DEFAULT_OPTIONS).install('httparty', '~> 0.11.0')
 end
 require 'httparty'
 
