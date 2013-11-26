@@ -32,7 +32,7 @@ module DeployKey
   def auth
     auth = { :headers => { "User-Agent" => "Chef Deploy Key", "Content-Type" => "application/json" } }
     if new_resource.credentials[:token]
-      auth[:headers].merge!({ "Authorization" => "token #{new_resource.credentials[:token]}" } })
+      auth[:headers].merge!({ "Authorization" => "token #{new_resource.credentials[:token]}" })
     elsif new_resource.credentials[:user] && new_resource.credentials[:password]
       auth.merge({ :basic_auth => { username: new_resource.credentials[:user], password: new_resource.credentials[:password] } })
     else
