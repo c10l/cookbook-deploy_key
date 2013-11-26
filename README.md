@@ -71,7 +71,7 @@ end
 ```ruby
 deploy_key "bitbucket_key" do
   provider Chef::Provider::DeployKeyBitbucket
-  path '/home/app_user/.ssh'  
+  path '/home/app_user/.ssh'
   credentials({
     :token => 'my_bitbucket_oauth_token'
   })
@@ -85,4 +85,4 @@ end
 
 # Author
 
-Cassiano Leal ([email](mailto:cassianoleal@gmail.com) | [twitter](http://twitter.com/cassianoleal) | [github](https://github.com/cassianoleal)) 
+Cassiano Leal ([email](<mailto:cassianoleal@gmail.com>) | [twitter](http://twitter.com/cassianoleal) | [github](https://github.com/cassianoleal))
