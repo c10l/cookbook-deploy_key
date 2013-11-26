@@ -28,11 +28,12 @@ module DeployKey
     when Chef::Provider::DeployKeyGithub    then "https://api.github.com/repos/#{new_resource.repo}/keys"
     end
   end
-  
+
   def auth
     auth = { :headers => { "User-Agent" => "Chef Deploy Key", "Content-Type" => "application/json" } }
     if new_resource.credentials[:token]
-      auth.merge({ :headers => { "Authorization" => "token #{new_resource.credentials[:token]}" } })
+      auth[:headers].merge!({ "Authorization" => "token #{new_resource.credentials[:token]}" })
+      return auth
     elsif new_resource.credentials[:user] && new_resource.credentials[:password]
       auth.merge({ :basic_auth => { username: new_resource.credentials[:user], password: new_resource.credentials[:password] } })
     else
