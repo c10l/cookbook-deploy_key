@@ -52,9 +52,6 @@ Vagrant.configure("2") do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
-  config.ssh.max_tries = 40
-  config.ssh.timeout   = 120
-
   # The path to the Berksfile to use with Vagrant Berkshelf
   # config.berkshelf.berksfile_path = "./Berksfile"
 
@@ -70,13 +67,15 @@ Vagrant.configure("2") do |config|
   # to skip installing and copying to Vagrant's shelf.
   # config.berkshelf.except = []
 
-  config.vm.provision :chef_client do |chef|
-    chef.chef_server_url        = "https://api.opscode.com/organizations/zcast"
-    chef.validation_client_name = "zcast-validator"
-    chef.validation_key_path    = "/Users/cassiano/.chef/zcast-validator.pem"
+  config.omnibus.version = :latest
+
+  config.vm.provision :chef_solo do |chef|
+    # chef.chef_server_url        = "https://api.opscode.com/organizations/zcast"
+    # chef.validation_client_name = "zcast-validator"
+    # chef.validation_key_path    = "/Users/cassiano/.chef/zcast-validator.pem"
 
     chef.run_list = [
-        "recipe[deploy_key::default]"
+        "recipe[deploy_key::test]"
     ]
   end
 end
