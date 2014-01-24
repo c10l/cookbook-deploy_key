@@ -1,6 +1,6 @@
 # deploy_key cookbook
 
-This is a Chef cookbook to manage deploy_keys on SaaS VCSs. Currently, it supports Bitbucket and Github.
+This is a Chef cookbook to manage deploy_keys on SaaS VCSs. Currently, it supports Bitbucket, Github and GitLab.
 
 This work is heavily based on the ideas and code of ZippyKid's [github-deploy-key](https://github.com/zippykid/chef-github-deploy-key) cookbook.
 
