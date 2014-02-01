@@ -33,6 +33,12 @@ action :create do
     end
   end
 
+  directory new_resource.path do
+    owner new_resource.owner
+    group new_resource.group
+    recursive true
+  end
+
   file "#{new_resource.path}/#{new_resource.label}" do
     owner new_resource.owner
     group new_resource.group
