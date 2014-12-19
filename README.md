@@ -91,6 +91,15 @@ deploy_key "bitbucket_key" do
 end
 ```
 
+# ChefSpec matchers
+
+As of version 0.2.0, the following ChefSpec matchers are available:
+
+* `create_deploy_key(resource_name)`
+* `delete_deploy_key(resource_name)`
+* `add_deploy_key(resource_name)`
+* `remove_deploy_key(resource_name)`
+
 # Author
 
 Cassiano Leal ([email](<mailto:cassianoleal@gmail.com>) | [twitter](http://twitter.com/cassianoleal) | [github](https://github.com/cassianoleal))
