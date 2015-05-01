@@ -86,7 +86,7 @@ deploy_key "bitbucket_key" do
   repo 'organization/million_dollar_app'
   owner 'deploy'
   group 'deploy'
-  mode 00640
+  mode '0640'
   action :add
 end
 ```
@@ -102,4 +102,4 @@ As of version 0.2.0, the following ChefSpec matchers are available:
 
 # Author
 
-Cassiano Leal ([email](<mailto:cassianoleal@gmail.com>) | [twitter](http://twitter.com/cassianoleal) | [github](https://github.com/cassianoleal))
+Cassiano Leal ( [email](<mailto:cassianoleal@gmail.com>) | [twitter](http://twitter.com/cassianoleal) | [github](https://github.com/cassianoleal) )
