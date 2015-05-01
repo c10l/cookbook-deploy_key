@@ -55,8 +55,10 @@ module DeployKey
     req = auth(req)
     req.body = body
     http = Net::HTTP.new(url.host, url.port)
-    http.use_ssl = true
-    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    if url.instance_of?  URI::HTTPS
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    end
     http.request(req)
   end
 
