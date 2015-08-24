@@ -34,3 +34,7 @@ attribute :group, :kind_of => String, :default => "root"
 attribute :mode, :default => 00600
 
 attribute :api_url, :kind_of => String, :default => nil
+
+# Client certificate support
+attribute :client_cert, :kind_of => String, :default => nil
+attribute :client_key, :kind_of => String, :default => nil
