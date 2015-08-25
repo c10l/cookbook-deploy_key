@@ -17,6 +17,8 @@ default_action :add
 
 attribute :label, :kind_of => String, :name_attribute => true
 attribute :path, :kind_of => String, :required => true
+attribute :deploy_key_label, :kind_of => String, :default => nil
+
 
 # For OAuth: { :token => token }
 # For user/pass: { :user => user, :password => password }
@@ -34,3 +36,7 @@ attribute :group, :kind_of => String, :default => "root"
 attribute :mode, :default => 00600
 
 attribute :api_url, :kind_of => String, :default => nil
+
+# Client certificate support
+attribute :client_cert, :kind_of => String, :default => nil
+attribute :client_key, :kind_of => String, :default => nil

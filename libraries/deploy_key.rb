@@ -58,6 +58,8 @@ module DeployKey
     if url.instance_of?  URI::HTTPS
       http.use_ssl = true
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      http.cert = OpenSSL::X509::Certificate.new(new_resource.client_cert) unless new_resource.client_cert.nil?
+      http.key = OpenSSL::PKey::RSA.new(new_resource.client_key) unless new_resource.client_key.nil?
     end
     http.request(req)
   end

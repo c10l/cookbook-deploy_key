@@ -64,7 +64,9 @@ action :add do
     Chef::Log.info("Deploy key #{new_resource.label} already added - nothing to do.")
   else
     converge_by("Register #{new_resource}") do
-      add_key(new_resource.label, pubkey)
+      label = new_resource.deploy_key_label.nil? ? new_resource.label : new_resource.deploy_key_label
+
+      add_key(label, pubkey)
     end
   end
 end
