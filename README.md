@@ -51,7 +51,7 @@ Supported providers:
 * `:add` - Adds the public key as a deploy key for the repository;
 * `:remove` - Removes the key from the list of deploy keys on the repository
 
-# <a id="authentication"></a>Authentication
+# Authentication
 
 Authentication can be done either via username/password:
 
