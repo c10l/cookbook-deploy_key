@@ -35,10 +35,14 @@ Supported providers:
     | GitHub / Bitbucket | `username/repo_slug` (e.g.: `cassianoleal/cookbook-deploy_key`) |
     | GitLab             | an Integer (e.g.: `1`, `2`, `999`)                              |
 
-* `api_url`: The url of the GitLab server (GitLab only)
 * `owner`: The owner of the key files on disk. Defaults to `root`
 * `group`: The group of the key files on disk. Defaults to `root`
 * `mode`: The mode that will be passed on to chmod. Defaults to `0600`
+
+##### The following attributes apply only to the GitLab provider:
+* `api_url`: The url of the GitLab server
+* `client_cert`: Client certificate
+* `client_key`: Client cert's key
 
 # Actions
 
